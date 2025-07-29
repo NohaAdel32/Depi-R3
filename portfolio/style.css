@@ -1,0 +1,64 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html{
+    font-size:10px;
+}
+body{
+    background-color: white;
+    letter-spacing: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav{
+    width: 90%;
+    margin: auto;
+    color: #252425;
+    height: 10rem;
+}
+
+.menu li{
+    display: inline-block;
+    list-style-type: none;
+}
+.menu a{
+      text-decoration: none;
+      color: #252425;
+      margin-right: 1.2rem;
+      text-transform: capitalize;
+}
+.menu >i{
+    font-size: 1.8rem;
+}
+.menu >a{
+    font-size: 1.8rem;
+    font-weight: 700;
+   margin-right: 3.5rem;
+}
+.menu li a{
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 2.8rem;
+}
+.menu li a i{
+    font-size: 1rem;
+    padding-left: 0.5rem;
+}
+.line-horz {
+    width: 1px;
+    height: 10rem; /* خليها أصغر شويه علشان تناسب القائمة */
+    background-color:#A3A3A3;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px; /* شوية مسافة على الجنب */
+}
+.menu-contact{
+    width: 27.5rem;
+    height: 10rem;
+    background-color: #FF6000;
+    display: inline-block;
+    place-content: center;
+    padding-left: 2rem;
+}
