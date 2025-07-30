@@ -1,3 +1,4 @@
+'use strict'
 // 1  capitalize
 function capitalizeWords(str){
     return str.slice(0,1).toUpperCase()+str.slice(1).toLowerCase()
@@ -73,6 +74,29 @@ const obj = { foo: "bar", baz: 42 };
 console.log(invertObject(obj))
 ///////////////////////////////////////////////////////////////////////////////////
 // 11 omitKeys
-function omitKeys(){
-    
+// function omitKeys(){
+//    let obj= { a: 1, b: 2, c: 3, d: 4 }
+// const updatedObj = Object.fromEntries(
+//   Object.entries(obj).filter(([key]) => key !== ['a','d'])
+// );
+// }
+//////////////////////////////////////////////////////////////////////////////////
+//12 pickKeys
+
+
+
+///////////////////////////////////////////////////////////////////////////////////
+//13 reverseArray
+function reverseArray(arr){
+    let ans=arr.reverse()
+    return ans
 }
+let array4=[5,6,7]
+ console.log(reverseArray(array4))
+//////////////////////////////////////////////////////////////////////////////////
+//14 countOccurrences 
+function countOccurrences (arr){
+return arr.length
+}
+console.log(countOccurrences (array4))
+
