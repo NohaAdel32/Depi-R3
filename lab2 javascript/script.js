@@ -23,33 +23,50 @@ let array=[1,2,3]
 console.log(sumOfSquares(array))
 ///////////////////////////////////////////////////////////////////////////////////
 //4 ‘filterArray’
-function filterArray(array){
-    let even=array.filter(item=>item%2===0)
-    return even
+function filterArray(array,callbackfunction){
+    let element=[]
+ for(let i=0; i<array.length;i++){
+    if(callbackfunction(array[i])){
+        element.push(array[i])
+    }
+ }
+ return element
 }
+
 let array2=[2,5,6,9]
-console.log(filterArray(array2))
+console.log(filterArray(array2,x=>x%2===0))
 ///////////////////////////////////////////////////////////////////////////////
 // 5 mapArray’
-function mapArray(arr){
-    let array=arr.map(item=>item*2)
+function mapArray(arr,callbackfunction){
+    let array=[]
+    for(let i=0;i<arr.length;i++){
+        array.push(callbackfunction(arr[i]))
+    }
     return array
 }
-console.log(mapArray(array))
+let square=(item)=>(item*2)
+console.log(mapArray(array,square))
 /////////////////////////////////////////////////////////////////////////////////////
 //6 reduceArray’
-function reduceArray(arr){
-  return arr.reduce((acc , current)=>acc+current,0)
+function reduceArray(arr,initial,callbackfunction){
+    let acc=initial
+ for(let i=0; i<arr.length;i++){
+   acc= callbackfunction(acc,arr[i])
+ }
+ return acc
 }
-console.log(reduceArray(array))
+console.log(reduceArray(array,0,(item,acc)=>(item+acc)))
 ////////////////////////////////////////////////////////////////////////////////////
 //7 forEachArray
-function forEachArray(arr){
+function forEachArray(arr,callbackfunction){
 for(let i=0;i<arr.length;i++){
-    console.log(arr[i])
+   callbackfunction(arr[i])
 }
 }
-forEachArray(array)
+function print(x){
+    console.log(x)
+}
+forEachArray(array,print)
 /////////////////////////////////////////////////////////////////////////////////////
 //8 findMax
 function findMax(arr){
