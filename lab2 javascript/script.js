@@ -51,7 +51,7 @@ console.log(mapArray(array,square))
 function reduceArray(arr,initial,callbackfunction){
     let acc=initial
  for(let i=0; i<arr.length;i++){
-   acc= callbackfunction(acc,arr[i])
+   acc= callbackfunction(arr[i],acc)
  }
  return acc
 }
@@ -86,22 +86,54 @@ console.log(mergeObjects(target,source))
 ///////////////////////////////////////////////////////////////////////////////////
 //10 invertObject
 function invertObject(obj){
-return Object.entries(obj)
-  
+let keys = Object.keys(obj);     
+let values = Object.values(obj);
+let newObj={}
+for(let i=0; i<keys.length;i++){
+    newObj[values[i]] = keys[i];
 }
-const obj = { foo: "bar", baz: 42 };
+  return newObj
+}
+const obj = { a: 1, b: 2, c: 3 } ;
 console.log(invertObject(obj))
 ///////////////////////////////////////////////////////////////////////////////////
 // 11 omitKeys
-// function omitKeys(){
-//    let obj= { a: 1, b: 2, c: 3, d: 4 }
-// const updatedObj = Object.fromEntries(
-//   Object.entries(obj).filter(([key]) => key !== ['a','d'])
-// );
-// }
+function omitKeys( obj,arrOfKeys){
+    
+   let newObj={}
+   for(let i=0;i<arrOfKeys.length;i++){
+    if(arrOfKeys[i]!="b" && arrOfKeys[i]!="d"){
+       for (let key of arrOfKeys[i]) {
+       if (key in obj) {
+      newObj[key] = obj[key];
+    }
+    }
+   }
+  }
+return newObj
+}
+let obj2= { a: 1, b: 2, c: 3, d: 4 }
+let keys1=Object.keys(obj2);
+console.log(omitKeys(obj2,keys1))
 //////////////////////////////////////////////////////////////////////////////////
 //12 pickKeys
-
+function pickKeys( obj,arrOfKeys){
+    
+   let newObj={}
+   for(let i=0;i<arrOfKeys.length;i++){
+    if(arrOfKeys[i]==="b" || arrOfKeys[i]==="d"){
+       for (let key of arrOfKeys[i]) {
+       if (key in obj) {
+      newObj[key] = obj[key];
+    }
+    }
+   }
+  }
+return newObj
+}
+let obj3= { a: 1, b: 2, c: 3, d: 4 }
+let keys3=Object.keys(obj3);
+console.log(pickKeys(obj3,keys3))
 
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -114,8 +146,15 @@ let array4=[5,6,7]
  console.log(reverseArray(array4))
 //////////////////////////////////////////////////////////////////////////////////
 //14 countOccurrences 
-function countOccurrences (arr){
-return arr.length
+function countOccurrences (arr,value){
+ let count=0
+ for(let i=0;i<arr.length;i++){
+    if(arr[i]===value){
+        count++
+    }
+ }
+ return count
 }
-console.log(countOccurrences (array4))
+let arr = [1, 2, 3, 2, 4, 2,4];
+console.log(countOccurrences (arr,4))
 
