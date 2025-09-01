@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Task1</title>
+</head>
+
+<body>
+    <div class="container">
+        <h3><i class="fa-solid fa-circle-xmark close-notification"></i><span class="error-notification">hey Noha!</span></h3>
+        <form>
+            <span>Department :</span>
+            <input type="radio" name="Department" value="SD" checked /> SD
+            <input type="radio" name="Department" value="OS" /> OS
+            <input type="radio" name="Department" value="EL" /> EL
+            <br>
+            <label>StudentName :</label>
+            <input type="text" placeholder="Enter Name " name="studentName" required>
+            <span class="error-msg" id="nameError">Required</span>
+            <br>
+            <label>StudentGrades :</label>
+            <input type="text" placeholder="Enter Grade " name="studentGrade" required >
+            <span class="error-msg" id="gradeError">should be number</span>
+            <br>
+
+            <input type="button" value="Add" class="add-button" />
+            <br>
+            <label>Sort :</label>
+            <select class="sort-parameter">
+                <option value="name">Name</option>
+                <option value="grade">Grade</option>
+            </select>
+            <br>
+            <label>Filter :</label>
+            <select class="filter-parameter">
+                <option selected value="all">All</option>
+                <option value="success">Success</option>
+                <option value="fail">Fail`</option>
+            </select>
+        </form>
+        <div class="container-table">
+             <table class="students-table">
+
+             </table>
+        </div>
+    </div>
+    <script src="script/consumming.js"></script>
+    <script src="script/function.js"></script>
+</body>
+
+</html>

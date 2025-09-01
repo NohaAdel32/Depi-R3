@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(153, 151, 151);
+  color: black;
+  font-family: Andalus;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.error-msg {
+  color: red;
+  font-size: small;
+  display: none;
+}
+.show {
+  display: block;
+  margin-left: 17rem;
+}
+
+h3 {
+ opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  width: 60%;
+  height: 2.2rem;
+  font-size: 1.5rem;
+  color: #d8000c;
+  background-color: #ffbaba;
+  padding: 0 1rem;
+  border: 1px solid;
+
+}
+.show-error-notification {
+       opacity: 1;
+  transform: translateY(0);
+}
+.close-notification {
+  cursor: pointer;
+}
+
+.error-notification {
+  margin-left: 0.5rem;
+}
+.container {
+  width: 70%;
+  margin: 70px auto;
+}
+input[type="radio"] {
+  margin-left: 20px;
+}
+input[type="text"] {
+  margin-left: 7px;
+  height: 30px;
+}
+.add-button {
+  width: 80px;
+  height: 60px;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 80%;
+  margin: 7rem auto;
+  border: 2px solid #eee;
+}
+td {
+  text-align: center;
+  border: 2px solid #eee;
+  background-color: whitesmoke;
+  text-transform: capitalize;
+  width: 33%;
+}
+
+.fa-trash-can {
+  color: red;
+  cursor: pointer;
+}
